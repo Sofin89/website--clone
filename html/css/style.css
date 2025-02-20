@@ -1,0 +1,935 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Ubuntu:wght@300&display=swap');
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    /* min-width: 100vw; */
+    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+/* new heading  */
+.newheading{
+    font-size: 60px;
+    font-weight: bold;
+margin-left: 80px;
+padding:25px 20px ;
+    font-family: sans-serif;
+    background-color: #e79015;
+    background-image: linear-gradient(to right, #fbbf9c,
+    #f0f765,#d49400   100%);
+    background-size:100% ;
+    -webkit-background-clip : text;
+   
+    -webkit-text-fill-color: transparent;
+  
+}
+.newheading span{
+    font-size: 25px;
+}
+.greater-than{
+    transform: rotate(90deg);
+  position: relative;
+  top: 2px;
+   padding: 0 10px;
+}
+
+/* navbar  css */
+header{
+    width: 100%;
+  position: sticky;
+ top: 0;
+ z-index: 1;
+   
+    
+}
+.navbar{
+    background: rgb(240, 130, 12);
+    height: 80px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    font-size: 1.2rem;
+ 
+    z-index: 999;
+
+}
+
+.navbar-menu{
+    display: flex;
+    align-items: center;
+    
+    font-weight: bold;
+    height: 80px;
+
+}
+.navbar-item{
+list-style: none;
+    transition: all 0.3s ease;
+   
+/* height: 100%; */
+
+}
+.navbar-item:hover{
+    background: rgb(185, 99, 42);
+   
+}
+.navbar-links{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   font-size: 1em;
+    z-index: -1;
+    text-decoration: none;
+    height: 100%;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    width: 140px;
+    padding: 18px 0;
+}
+
+
+/* .navbar-links:hover{
+    color: #000000;
+transition: all 0.3s ease;
+} */
+
+
+.social-links{
+  display: flex;
+  position: relative;
+ left: 0;
+  z-index: 1;
+}
+
+.fa-brands{
+   color: #fff;
+    margin: 0 13px;
+}
+/* navbar dropdown css start  */
+
+/* The container <div> - needed to position the dropdown content */
+
+ 
+  .dropdown {
+    /* padding: 20px 40px; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  
+    position: relative;
+    font-size: 18px;
+
+    perspective: 1000px;
+    z-index: 100;
+  }
+  .dropdown:hover {
+ 
+    background: rgb(185, 99, 42);
+
+    cursor: pointer;
+  }
+  .dropdown:hover .dropdown_menu li {
+    display: block;
+  }
+  .dropdown_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    Min-width: 250px;
+    perspective: 1000px;
+    z-index: -1;
+  }
+  .dropdown_menu li {
+    display: none;
+    background: rgb(185, 99, 42);
+    border-bottom: 1px solid #fff;
+    z-index: 1;
+    padding: 10px 20px;
+    opacity: 0;
+  }
+  .dropdown_menu li a {
+   text-decoration: none;
+   color: #fff;
+   width: 100%;
+   font-size: 16px;
+   text-align: center;
+  }
+  .dropdown_menu li:hover {
+    background: rgb(240, 130, 12);
+  }
+  .dropdown:hover .dropdown_menu--animated {
+    display: block;
+  }
+  .dropdown_menu--animated {
+    display: none;
+  }
+  .dropdown_menu--animated li {
+    display: block;
+    opacity: 1;
+  }
+ 
+  .dropdown_menu-7 {
+    animation: rotateMenu 450ms ease-in-out forwards;
+   
+    transform-origin: top center;
+  }
+  
+
+  @keyframes rotateMenu {
+    0% {
+      transform: rotateX(-90deg);
+    }
+    70% {
+      transform: rotateX(20deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+  }
+  
+  /* new drop down end */
+  
+ 
+/* navbar dropdown css end  */
+/* navbar end css   */
+ /* responsive navbar css media query :start */
+
+
+@media screen and (max-width:900px) {
+
+
+
+    .dropdown_menu {
+        position: relative;
+       
+      
+      }
+    .navbar-menu{
+        display: grid;
+        grid-template-columns:auto ;
+       
+        width: 100%;
+  
+        position: absolute;
+top: -1000px;
+       left: 0;
+      opacity: 1;
+
+        transition: all 0.5s ease;
+        z-index: -1;
+        background: rgb(240, 130, 12);
+    }
+    .navbar-menu.active{
+        background: rgb(240, 130, 12);
+        top: 100%;
+        left:0px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 75vh;
+        font-size: 1.6rem;
+      
+        
+    }
+
+    /* #navbar-logo{
+        padding-left: 25px;
+
+    } */
+    .navbar-toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+        display: block;
+        cursor: pointer;
+    }
+    .navbar-item{
+        width: 100%;
+        padding: 0;
+
+    }
+    .navbar-links{
+        text-align: center;
+        /* padding: 1rem; */
+        width: 100%;
+        display: table;
+        margin: 0;
+    }
+    .navbar-toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+        display: block;
+        cursor: pointer;
+    }
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        left: 5%;
+        transform: translate(5%,20%);
+    }
+    #mobile-menu.is-active .bar:nth-child(2){
+opacity: 0;
+
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+transform: translateY(8px) rotate(45deg);
+
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+transform: translateY(-8px) rotate(-45deg);
+
+    }
+    .logo a{
+        text-decoration: none;
+        color: #fff;
+            font-size: 30px;
+           
+    
+     
+    }
+
+}
+
+
+
+ /* responsive footer css media query :end */
+
+/* section1 css start   */
+.section1{
+/* width: 100vw; */
+    height: 70vh;
+  
+    z-index: -1;
+}
+.section1-box{
+/* width: 100vw; */
+    height: 70vh;
+    position: relative;
+    /* margin: auto; */
+  
+   
+}
+.myslides1{
+    display: none;
+   
+}
+
+
+/* Slideshow img */
+
+.section1  img {
+    width: 100%;
+    height:70vh;
+    
+   
+
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background: #000;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a grey background color */
+  .prev:hover, .next:hover {
+    background-color: #f1f1f1;
+    color: black;
+  }
+/* section1 css end   */
+/* section2 css start   */
+.section2{
+    position: relative;
+top: 0;
+
+    width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+    background: rgba(0, 0, 0, 0.01);
+    padding: 20px 1px;
+    z-index: -1;
+    
+ 
+
+}
+.section2-box{
+    width: 500px;
+   height: 600px;
+  
+   margin: 10px;
+   display: flex;
+   flex-direction: column;
+ 
+ padding: 0px 20px;
+   border-radius: 3px;
+
+  
+}
+.light{
+    background: rgb(240, 130, 12);
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 40px;
+    z-index: -1;
+   
+}
+.section2-heading{
+    font-size: 1.5em;
+    padding: 10px 0;
+    font-weight: bold;
+   
+}
+.section2-text{
+    font-size: 1.1em;
+    padding: 10px 0;
+  
+   
+}
+.section2-readmores a{
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #fff;
+    
+    
+}
+.section2-readmore a{
+ 
+  color: red;
+  text-decoration: none;
+  font-weight: bold;
+    
+}
+.section2-img img{
+    height: 330px;
+    width: 100%;
+}
+.section2-box-heading{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: red;
+    margin: 5px 0;
+}
+.section2-box-text{
+ margin: 10px 0;
+ letter-spacing: 1px;
+}
+
+/* section2 css end   */
+/* section3 css start   */
+.section3{
+    margin: 40px 0px;
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+position: relative;
+top: 0;
+    background: rgba(241, 235, 235, 0.809);
+    padding: 40px ;
+    z-index: -1;
+    
+}
+.section3-box{
+    /* border: 1px solid #000; */
+    margin: 0 10px;
+    width: 90%;
+    height: 400px;
+    text-align: center;
+}
+.section3-box .img img{
+    height: 300px;
+    width: 100%;
+}
+.section3-box span{
+    display: block;
+}
+/* section3 css end   */
+/* section4 css start   */
+.section4{
+    margin: 40px auto;
+    width: 80vw;
+/* display: flex;
+justify-content: center;
+align-items: center; */
+
+background: rgba(0, 0, 0, 0.01);
+    padding: 40px ;
+    z-index: -1;
+    text-align: center;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    
+}
+.section4-box{
+  border-radius: 6px;
+    margin: 16px 20px;
+    width: 310px;
+    height: 100px;
+    text-align: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+    transition: .2s;
+    color: #fff;
+}
+.section4-box:hover{
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5) ;
+}
+.section4-box-heading{
+    font-size: 1.5em;
+}
+.section4-box-heading span{
+    font-size: 0.7em;
+    margin: 8px 0;
+}
+.section4-box-part1{
+    display: flex;
+   
+    /* flex-direction: column; */
+}
+.box2{
+    background: darkblue;
+}
+.box3{
+    background: green;
+}
+.box4{
+    background: coral;
+}
+.box5{
+    background:darkcyan;
+}
+.box6{
+    background:darkslateblue;
+}
+span{
+    display: block;
+}
+
+/* section4 css end   */
+@media screen and (max-width:900px){
+    .section1 {
+        height: 300px;
+    }
+    .section1 img{
+        height: 300px;
+    }
+    .section2{
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: -1;
+    
+    }
+    .section2-box{
+      width: 90vw;
+height: auto;      
+    }
+    .section2-img img{
+        width: 350px;
+    }
+    .light{
+      
+        height: 300px;
+    }
+    .section3{
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: -1;
+   
+        
+}
+.section3-box{
+    width: 60vw;
+  }
+
+
+.section4{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ flex-direction: column;
+    
+}
+.section4-box{
+    width: 60vw;
+  }
+   
+}
+@media screen and (max-width:1000px) {
+    .navbar-links{
+        font-size: .7em;
+        width: 100px;
+      
+    }
+    .greater-than{
+       
+       padding: 0 5px;
+    }
+    .social-links{
+        display: none;
+    }
+}
+@media screen and (max-width:1150px) {
+  
+    .navbar-links{
+        font-size: .9em;
+        width: 115px;
+        margin: 0 5px;
+      
+    }
+    .social-links
+    {
+      
+       display: none;
+    }
+    .section4-box{
+        width: 260px;
+        align-items: center;
+        /* margin: 10px ; */
+        font-size: .9em;
+    }
+ 
+   .light{
+       font-size: .8em;
+   }
+}
+
+
+/* footer seciton css start  */
+.footer-box{
+    width: 100%;
+padding: 40px;
+background: rgb(240, 130, 12);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+ 
+
+}
+.first-box{
+    
+width: 23%;
+}
+.text{
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+span{
+    letter-spacing: 1px;
+}
+.second-box{
+    
+    width: 55%;
+}
+.readmore{
+    color: red;
+    text-decoration: none;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.readmore:hover{
+   color: rgb(68, 0, 255);
+}
+.footer-heading{
+    font-size: 2.5em;
+    padding: 10px 0;
+}
+
+
+.footer-box2{
+    width: 100%;
+    text-align: center;
+  
+    background: rgb(143, 75, 3);
+padding: 12px 0;
+color: #fff;
+}
+
+/* footer seciton css end  */
+ /* responsive footer css media query :start */
+
+ @media screen and (max-width: 900px) {
+
+     .footer-box{
+  flex-direction: column;
+}
+.first-box{
+    width: 100%;
+    margin: 12px 0;
+}
+.second-box{
+    width: 100%;
+    margin: 12px 0;
+}
+span{
+    display: block;
+}
+.text{
+    font-size: 1.1em;
+}
+ }
+ /* responsive footer css media query :end */
+
+
+
+/* readmore section css start  */
+.readmorebox{
+    position: relative;
+    top: -20px;
+    height: 40vh;
+    background-color: aqua;
+    z-index: -1;
+    
+
+}
+
+
+.readmore-section2{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 80vh;
+}
+.leftpart{
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+.section-heading{
+    border-bottom: 1px solid #fff;
+    box-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding: 20px 0;
+}
+.leftpart ul li{
+    list-style: none;
+    margin: 20px 0;
+}
+.leftpart ul li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: .2s;
+    
+}
+.leftpart ul li a:hover{
+    color: aqua;
+    
+}
+.fa-star{
+    color: rgb(255, 123, 0);
+    margin-right: 5px;
+}
+.rightpart{
+    width: 60vw;
+   
+}
+.rightpart .section-heading{
+    font-size: 50px;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    color: rgb(116, 116, 233);
+    font-weight: bold;
+}
+.section-text{
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+.red{
+    color: red;
+    font-weight: bold;
+}
+.text-heading{
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #333;
+    margin: 5px ;
+}
+.section-text-box{
+    padding-bottom: 20px ;
+}
+
+
+/* readmore section css end  */
+
+/* form design css start  */
+
+.form-section{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 80vh;
+    flex-wrap: wrap;
+}
+.form-body{
+    width: 100%;
+    position: relative;
+  padding: 20px 0;
+}
+.form-box{
+    margin: 15px 0;
+   
+}
+.input-box{
+    width: 100%;
+    padding: 10px ;
+ outline: none;
+ border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin: 7px 0;
+}
+.message{
+    width: 100%;
+    height: 200px;
+outline: none;
+border: 1px solid rgba(0, 0, 0, 0.3);
+border-radius: 5px;
+margin: 7px 0;
+padding: 10px ;
+}
+.btn{
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+    border: 1px solid #d49400;
+    background: transparent;
+    font-family: sans-serif;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: #d49400;
+}
+.btn:hover{
+ background: #e79015;
+ color: #fff;
+ border: none;
+ outline: none;
+}
+
+/* form design css end  */
+/* form responsive css start  */
+@media screen and (max-width : 900px) {
+    .form-section{
+        flex-direction: column;
+        margin: 0 10px;
+       
+    }   
+   
+    .form-section-right{
+        width: 90vw;
+      
+    }
+
+}
+/* form responsive css end  */
+/* about section start   */
+.about-section{
+
+    
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    
+}
+.about-img{
+    width: 350px;
+    height: 400px;
+ 
+}
+
+.about-img-box{
+    display: flex;
+    justify-content: space-between;
+    height: 550px;
+    
+    
+}
+.section-img-text{
+    margin-left: 20px;
+}
+.section-img-text{
+position: relative;
+top: -30px;
+}
+.caption{
+    width: 100%;
+    height: 450px;
+ border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+   
+  
+}
+.caption-text{
+    width: 100%;
+
+ border-bottom-right-radius: 10px;
+ border-bottom-left-radius: 10px;
+   text-transform: capitalize;
+height: 40px;
+font-size: 20px;
+z-index: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.box-2{
+    height: 400px;
+}
+.img-2{
+    height: 300px;
+}
+.caption-2{
+    height: 350px;
+}
+/* about section end   */
+/* section show start css  */
+.section-show{
+    width: 100%;
+    height: 40vh;
+    background: gray;
+    margin-bottom: 40px;
+}
+/* section show end css  */
